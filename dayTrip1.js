@@ -1,28 +1,52 @@
 "use strict"
+//destinations
+function cities(){
+    let closeBy = ['San Francisco', 'Los Angeles', 'Santa Cruz', 'Napa Valley', 'Sacramento'];
+    let restaurants = closeBy [Math.floor((Math.random() *closeBy.length))];
+    return restaurants;
 
-prompt("Welcome to 'Day Trip Generator in California! Click OK to start");
+}
+ //Food
+ function eatAtRestaurants(){
+     let foodChoices = ['Pizza', "Mexican Food", 'Italian Food', 'Chinese Buffet', 'Seafood', 'Mediterranean'];
+     let randomRestaurant = foodChoices[Math.floor(Math.random()*foodChoices.length)];
+     return randomRestaurant;
 
-let name= prompt ("What is your name?");
+ }
 
-let destination = ["San Francisco", "Emeryville", "Los Angeles", "Santa Cruz", "Napa Valley", "Sacramento"];
-let ran_destination = destination[Math.floor(Math.random()*restaurant.length)];
-prompt("You will be in the city of...",ran_destination);
+ //Transportation
+ function transportation(){
+    let choiceTransportation = ['Car', 'Bus', 'Uber', 'Lyft', 'Bike'];
+    let randomTransportation = choiceTransportation [Math.floor((Math.random() *choiceTransportation.length))];
+    return randomTransportation;
+ } 
 
+ //Entertainment
+ function funFun(){
+     let toDo = ['Beach', 'Hiking', 'Paintball', 'Movies', 'Fishing'];
+     let randomFun = toDo [Math.floor((Math.random() *toDo.length))];
+     return randomFun;
+ }
 
-let restaurant = ["Pizza", "Mexican Food", "Chinese Buffet", "Sushi", "Italian", "Mediterranean", "Wings", "Seafood"];
-let rand_rest = restaurant[Math.floor(Math.random()*restaurant.length)];
-prompt("You will be dining in at...",rand_rest);
+let destinations = cities();
+let restaurants = eatAtRestaurants();
+let transportations = transportation();
+let entertainment = funFun();
+let select = youSure();
 
-
-let transportation = ["Bus", "Taxi", "Uber", "Lyft", "Rental", "Bike"];
-let rand_trans = transportation[Math.floor(Math.random()*transportation.length)];
-prompt("You will take the...",rand_trans);
-
-let entertainment = ["Comedy Club", "Movies", "Arcade Center", "Beach", "Amusement Park", "Water Park"];
-let rand_enter = entertainment[Math.floor(Math.random()*transportation.length)];
-console.log("You will go...", rand_enter);
-
-let final = (name)+ "will begin this exciting trip in" + (ran_destination) + "Later that evening, you will be sitting down to have a delicious meal at" + (rand_rest) + "During the day, you will be utilizing a/an" + (rand_trans) + "to see all the beautiful sites. Lastly, you will make fun memories at" + (rand_enter) + "Hope you enjoy your trip. Click OK";
-prompt(final);
-alert(final);
-console.log(final);
+//Confirm Trip
+function dayTrip(){
+    if(seletion == true){
+        console.log("Your Day trip is completed: You will be taking " + transportation + " to " + destinations + "Getting a bite to eat" + restaurants + " to eat " + " entertainment of " + entertainment + " does that sound good");
+        return choice;
+    }
+    else{
+        destinations = closeBy();
+        transportation = transportation();
+        restaurants = eatAtRestaurants();
+        entertainment = funFun();
+        select = youSure();
+        dayTrip();
+    }
+}
+dayTrip();
