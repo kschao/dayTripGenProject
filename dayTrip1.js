@@ -38,6 +38,7 @@ let select = youSure();
 function dayTrip(){
     if(seletion == true){
         console.log("Your Day trip is completed: You will be taking " + transportation + " to " + destinations + "Getting a bite to eat" + restaurants + " to eat " + " entertainment of " + entertainment + " does that sound good");
+        console.log("Thank you for using the Day Trip Planner")
         return choice;
     }
     else{
